@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>My New Webserver!</title>
+	<link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+	<form action="#" method="post">
+		<div>
+			Имя: <input type="text" name="name">
+		</div>
+		<div>
+			Телефон: <input type="text" name="phone">
+		</div>
+		<div>
+			E-mail: <input type="text" name="email">
+		</div>
+	</form>
+
+	<script>
+		const input = document.getElementsByTagName('input');
+		let match = null;
+		for (const element of input) {
+			element.addEventListener('change', (event) => {
+				switch (event.target.name) {
+					case 'name':
+						match = event.target.value.match("^[a-zA-Zа-яА-ЯёЁ]+$");
+						if (match === null) {
+							console.log('Имя должно содержать только буквы!');
+						}
+						break;
+					case 'phone':
+						match = event.target.value.match(/\+7\((\d{3})\)(\d{3})-(\d{4})/);
+						if (match === null) {
+							console.log('Телефон должен быть в формате +7(000)000-0000!');
+						}
+						break;
+					case 'email':
+						match = event.target.value.match(/^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i);
+						if (match === null) {
+							console.log('Email должен быть в формате mail@mail.ru');
+						}
+						break;
+				}
+			});
+		}
+	</script>
+
+	<script src="./js/button.js"></script>
+	<script src="./js/shop.js"></script>
+</body>
+
+</html>
