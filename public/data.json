@@ -1,8 +1,8 @@
 {
     "data": [
-        { "name": "Shirt", "price": 150 },
-        { "name": "Socks", "price": 15 },
-        { "name": "Jacket", "price": 50 },
-        { "name": "Shoes", "price": 1500 }
+        { "id": 1, "name": "Shirt", "price": 150 },
+        { "id": 2, "name": "Socks", "price": 15 },
+        { "id": 3, "name": "Jacket", "price": 50 },
+        { "id": 4, "name": "Shoes", "price": 1500 }
     ]
 }

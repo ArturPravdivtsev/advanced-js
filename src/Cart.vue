@@ -1,25 +1,28 @@
 <template>
   <div class="cart">
     Cart
-	<div class="cart-list">
-        <CartItem v-for="cartGood in cartGoods" :key="cartGood.name" :cartGood="cartGood" />
+    <div class="cart-list">
+      <CartItem
+        v-for="cartGood in getCartItems"
+        :key="cartGood.name"
+        :cartGood="cartGood"
+      />
     </div>
   </div>
 </template>
 <script>
+import { mapMutations, mapGetters, mapActions } from "vuex";
 import CartItem from "./CartItem.vue";
 export default {
-    data () {
-        return {
-            cartGoods: [
-                { name: "Shirt", price: 150 },
-                { name: "Socks", price: 15 },
-            ]
-        }
-    },
-    components: {
-        CartItem
-    }
+  data() {
+    return {};
+  },
+  computed: {
+    ...mapGetters(["getCartItems"]),
+  },
+  components: {
+    CartItem,
+  },
 };
 </script>
 <style>
